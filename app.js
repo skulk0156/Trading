@@ -10,7 +10,7 @@ document.addEventListener("click", (e) => {
   if (t.closest && t.closest(".enroll-btn")) {
 
     // If clicking on Free One To One Sessions -> Google Form
-    if (t.textContent.includes("Free One To One Sessions")) {
+    if (t.textContent.includes("Free 1-on-1 Trading Guidance Session")) {
       window.open(
         "https://docs.google.com/forms/d/e/1FAIpQLSfJ1GawWBXpNGwLW84obVh-VueeVGJE241u5GtoHwXFtYorOw/viewform",
         "_blank"
