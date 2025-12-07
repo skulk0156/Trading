@@ -31,95 +31,162 @@ body{
   padding:0 20px;
 }
 
-/* -------------------------
-   NAVBAR (Glass)
-   ------------------------- */
-.site-header{
-  position:fixed;
-  top:0; left:0; right:0;
-  z-index:150;
-  display:flex;
-  justify-content:center;
-  pointer-events:none;
-}
-.navbar{
-  pointer-events:all;
-  width:100%;
-  display:flex;
-  align-items:center;
-  gap:18px;
-  padding:12px 20px;
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(12px);
-  border-radius:0;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-}
-.brand-logo{
-  width:80px;
-  height:80px;
-  object-fit:contain;
-}
-.brand-text{
-  font-weight:700;
-  font-size:26px;
-  background:linear-gradient(90deg,#daa806a6,#eae7a0);
-  -webkit-background-clip:text;
-  color:transparent;
+/* NAVBAR WRAPPER */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  width: 100%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
 }
 
-/* Nav Links */
-.nav-links{
-  margin-left:auto;
-  display:flex;
-  gap:18px;
-  list-style:none;
-}
-.nav-links a{
-  color:#fff;
-  text-decoration:none;
-  padding:6px 14px;
-  border-radius:999px;
-  font-weight:600;
-  font-size:17px;
-  transition:.2s ease;
-}
-.nav-links a:hover{
-  color:#2c62bf;
-  transform:translateY(-2px);
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  gap: 20px;
 }
 
-/* Hamburger */
-.nav-toggle{
-  display:none;
-  margin-left:auto;
-  background:transparent;
-  width:45px;
-  height:40px;
-  border:0;
-  cursor:pointer;
+/* BRAND */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
 }
-.nav-toggle.hamb{
-  width:22px;
-  height:3px;
-  background:#fff;
-  position:relative;
+
+.brand-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
 }
+
+.brand-text {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#daa806,#eae7a0);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* NAV LINKS */
+.nav-links {
+  margin-left: auto;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2c62bf;
+  transform: translateY(-2px);
+}
+
+/* HAMBURGER */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamb {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  position: relative;
+  display: block;
+  border-radius: 2px;
+}
+
 .nav-toggle .hamb::before,
-.nav-toggle .hamb::after{
-  content:"";
-  position:absolute;
-  width:22px;
-  height:3px;
-  background:#fff;
+.nav-toggle .hamb::after {
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  border-radius: 2px;
 }
-.nav-toggle .hamb::before{ top:-7px }
-.nav-toggle .hamb::after{ top:7px }
+
+.nav-toggle .hamb::before { top: -8px; }
+.nav-toggle .hamb::after { top: 8px; }
+
+/* MOBILE MENU */
+@media(max-width: 900px){
+
+  /* FIX: make header and navbar same width */
+  .site-header {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+  }
+
+  .brand-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-text {
+    font-size: 20px;
+  }
+
+  .nav-toggle {
+    display: block !important;
+    margin-left: auto !important;
+    z-index: 100000;
+  }
+
+  .navbar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 12px !important;
+    gap: 0 !important;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    height: 100vh;
+    width: 65%;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+  }
+}
+
+/* EXTRA SMALL SCREENS */
+@media(max-width: 500px){
+  .brand-logo { width: 45px; height: 45px; }
+  .brand-text { font-size: 18px; }
+  .nav-links { width: 80%; }
+}
+
 
 /* -------------------------
    HERO (Home only)
@@ -203,11 +270,11 @@ body{
 
 /* Slider Images */
 @keyframes heroSlider{
-  0%{ background-image:url("images/youtube.jpg") }
+  0%{ background-image:url("images/back7.jpg") }
   25%{ background-image:url("images/back4.webp") }
   50%{ background-image:url("images/back6.jpg") }
   75%{ background-image:url("images/back7.jpg") }
-  100%{ background-image:url("images/back3.jpg") }
+  100%{ background-image:url("images/back6.jpg") }
 }
 
 /* Typing */
@@ -878,7 +945,7 @@ footer{ background:#221d49; color:#fff; padding:28px 20px; }
   justify-content: center;
 
   /* 🔥 Updated Gradient */
-  background:linear-gradient(90deg,#daa806a6,#eae7a0);
+background:linear-gradient(90deg,#e28710a6,#bbc323);
 
   color: #fff;
   font-size: 22px;
@@ -983,13 +1050,12 @@ footer{ background:#221d49; color:#fff; padding:28px 20px; }
   from {opacity: 0; transform: translateY(10px);}
   to {opacity: 1; transform: translateY(0);}
 }
-
 /* Floating Button */
 .gs-note-btn {
   position: fixed;
   bottom: 110px;
   right: 25px;
-  background:linear-gradient(90deg,#c69906a6,#eae7a0);
+  background: linear-gradient(90deg,#e28710a6,#bbc323);
   color: #000;
   padding: 14px 16px;
   border-radius: 50%;
@@ -1004,44 +1070,41 @@ footer{ background:#221d49; color:#fff; padding:28px 20px; }
   transform: scale(1.1);
 }
 
-/* Popup Background Blur */
+/* ---------------------------------------------------
+   POPUP REPLACED WITH IMAGE ONLY (NO BLUR, NO OVERLAY)
+----------------------------------------------------- */
+
+/* Popup Background (NO blur, NO dark overlay) */
 .gs-note-popup {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(5px);
+  background: transparent;   /* removed blur + dark layer */
   z-index: 10000;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0;
 }
 
-/* Popup Card (REDUCED SIZE) */
+/* Image Container (Your Popup Image) */
 .gs-note-content {
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(15px);
-
-  padding: 22px;               /* ↓ Reduced from 35 */
-  max-width: 480px;            /* ↓ Reduced from 650 */
-  border-radius: 16px;         /* ↓ Reduced from 20 */
-
-  color: #fff;
-  font-size: 15px;             /* ↓ Reduced from 17 */
-  line-height: 1.5;            /* ↓ Slightly compact */
-
-  box-shadow: 0 6px 28px rgba(0,0,0,0.30);
+  width: 350px;
+  height: 500px;
+  background-image: url("images/note.jpg"); /* your image here */
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
   position: relative;
-  text-align: left;
+  padding: 0;
+  box-shadow: none;
 }
-
 
 /* Close Button */
 .gs-note-close {
   position: absolute;
-  top: 15px;
-  right: 18px;
-  font-size: 30px;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
   cursor: pointer;
   color: #fff;
   transition: 0.2s;
@@ -1051,59 +1114,55 @@ footer{ background:#221d49; color:#fff; padding:28px 20px; }
 }
 
 /* ---------------------------------------------------
-      RESPONSIVE POPUP CARD — GSCALPER PERSONAL NOTE
+      RESPONSIVE DESIGN
 ---------------------------------------------------- */
 
 /* Tablets (up to 768px) */
 @media (max-width: 768px) {
   .gs-note-content {
-    max-width: 420px;
-    padding: 20px;
-    font-size: 14.5px;
-    border-radius: 14px;
-    line-height: 1.45;
+    width: 300px;
+    height: 380px;
+    border-radius: 10px;
   }
 
   .gs-note-close {
-    font-size: 26px;
-    top: 10px;
-    right: 14px;
+    font-size: 24px;
+    top: 8px;
+    right: 12px;
   }
 }
 
 /* Mobile (up to 480px) */
 @media (max-width: 480px) {
-  .gs-note-popup {
-    padding: 10px;
-  }
 
   .gs-note-content {
-    max-width: 92%;
-    padding: 18px;
-    font-size: 14px;
-    border-radius: 12px;
-    line-height: 1.4;
-  }
-
-  .gs-note-content h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  .gs-note-content p {
-    margin-bottom: 8px;
+    width: 85%;
+    height: 450px;
+    border-radius: 10px;
   }
 
   .gs-note-close {
     font-size: 22px;
-    top: 8px;
-    right: 12px;
+    top: 6px;
+    right: 10px;
   }
 
   .gs-note-btn {
-    bottom: 95px;       /* adjust button spacing on mobile */
+    bottom: 95px;
     right: 20px;
     padding: 12px 14px;
+    font-size: 20px;
+  }
+}
+
+/* Extra small mobile (up to 360px) */
+@media (max-width: 360px) {
+  .gs-note-content {
+    width: 90%;
+    height: 340px;
+  }
+
+  .gs-note-close {
     font-size: 20px;
   }
 }
