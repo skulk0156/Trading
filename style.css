@@ -5,7 +5,7 @@
 /* Root variables */
 :root{
   --accent:#261a5c;
-  --accent-dark:#021a56;
+  --accent-dark:#ebc83a;
   --glass: rgba(255,255,255,0.06);
   --glass-2: rgba(255,255,255,0.08);
   --bg-light:#4b84d3;
@@ -89,7 +89,7 @@ body{
 }
 
 .nav-links a:hover {
-  color: #2c62bf;
+  color: #f1ce09;
   transform: translateY(-2px);
 }
 
@@ -256,8 +256,9 @@ body{
   border:0;
   cursor:pointer;
   font-weight:700;
-  background:var(--accent);
-  color:#fff;
+ background: linear-gradient(135deg, #ee9b1f, #e7cc44);
+;
+  color:#050000;
   box-shadow:0 6px 18px rgba(0,0,0,0.18);
   transition:.16s ease;
 }
@@ -270,11 +271,11 @@ body{
 
 /* Slider Images */
 @keyframes heroSlider{
-  0%{ background-image:url("images/back7.jpg") }
-  25%{ background-image:url("images/back4.webp") }
-  50%{ background-image:url("images/back6.jpg") }
-  75%{ background-image:url("images/back7.jpg") }
-  100%{ background-image:url("images/back6.jpg") }
+  0%{ background-image:url("images/bg1.jpg") }
+  25%{ background-image:url("images/bg2.png") }
+  50%{ background-image:url("images/bg3.jpeg") }
+  75%{ background-image:url("images/bg4.jpg") }
+  100%{ background-image:url("images/bg3.jpeg") }
 }
 
 /* Typing */
@@ -668,7 +669,6 @@ body{
 }
 
 
-
 /* Section Title */
 .section-title {
     padding: 10px 40px;
@@ -694,20 +694,38 @@ body{
 /* MAIN SLIDER WRAP */
 .testimonials-wrap {
     width: 100%;
-    overflow: hidden;
+    overflow-x: auto;   /* <-- ADDED */
+    overflow-y: hidden; /* <-- ADDED */
     padding: 30px 0;
     position: relative;
+    scroll-behavior: smooth; /* optional smooth scroll */
+    scrollbar-width: thin;   /* Firefox */
+}
+
+/* Show nice scrollbar (Chrome, Edge, Opera) */
+.testimonials-wrap::-webkit-scrollbar {
+    height: 8px;
+}
+
+.testimonials-wrap::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.testimonials-wrap::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
 }
 
 /* SLIDER TRACK (scrolling) */
 .track {
     display: flex;
     gap: 20px;
-    animation: slide-left 35s linear infinite;
+    animation: slide-left 10s linear infinite;
     will-change: transform;
 }
 
-/* CARD STYLE (exact like your screenshot) */
+/* CARD STYLE */
 .card {
     background: #ffffff;
     width: 350px;
@@ -719,7 +737,7 @@ body{
     gap: 12px;
 }
 
-/* Avatar – same style as seen on your screenshot */
+/* Avatar  */
 .avatar {
     width: 50px;
     height: 50px;
@@ -755,7 +773,7 @@ body{
     line-height: 1.45;
 }
 
-/* Animation (right → left) */
+/* Animation */
 @keyframes slide-left {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
@@ -779,7 +797,6 @@ body{
         padding: 14px;
     }
 }
-
 
 /*Contact*/
 
@@ -1088,8 +1105,8 @@ background:linear-gradient(90deg,#e28710a6,#bbc323);
 
 /* Image Container (Your Popup Image) */
 .gs-note-content {
-  width: 350px;
-  height: 500px;
+  width: 550px;
+  height: 630px;
   background-image: url("images/note.jpg"); /* your image here */
   background-size: cover;
   background-position: center;
@@ -1136,8 +1153,8 @@ background:linear-gradient(90deg,#e28710a6,#bbc323);
 @media (max-width: 480px) {
 
   .gs-note-content {
-    width: 85%;
-    height: 450px;
+    width: 95%;
+    height: 500px;
     border-radius: 10px;
   }
 
@@ -1159,7 +1176,7 @@ background:linear-gradient(90deg,#e28710a6,#bbc323);
 @media (max-width: 360px) {
   .gs-note-content {
     width: 90%;
-    height: 340px;
+    height: 400px;
   }
 
   .gs-note-close {

@@ -98,7 +98,7 @@ const courseDescriptions = {
       • Ideal for traders wanting a complete transformation <br>
       ✋ <strong>Price: 13,999/-</strong>
     </p>
-    <a href="https://t.me/gscalperoffficial" target="_blank" class="join-btn">👇 Join Now</a>`,
+    <a href="https://wa.me/8421493018" target="_blank" class="join-btn">👇 Join Now</a>`,
 
   "course-4.jpg": `
     <h3>👉 TAB – The Alpha Batch (Premium Mentorship)</h3>
@@ -112,7 +112,7 @@ const courseDescriptions = {
       • Designed for serious traders wanting elite-level training <br>
       ✋ <strong>Price: 34,999/-</strong>
     </p>
-    <a class="join-btn" target="_blank" href="https://t.me/gscalperoffficial">👇 Join Now</a>`,
+    <a class="join-btn" target="_blank" href="https://wa.me/8421493018">👇 Join Now</a>`,
 
   "course-3.jpg": `
     <h3>👉 TSE – The Silent Edge (8 Weeks)</h3>
@@ -126,7 +126,7 @@ const courseDescriptions = {
       • A safe, inclusive mentorship environment <br>
       ✋ <strong>Price: 28,999/-</strong>
     </p>
-    <a class="join-btn" target="_blank" href="https://t.me/gscalperoffficial">👇 Join Now</a>`,
+    <a class="join-btn" target="_blank" href="https://wa.me/8421493018">👇 Join Now</a>`,
 
   "course-2.jpg": `
     <h3>👉 Our Community Channel</h3>
