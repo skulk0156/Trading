@@ -508,7 +508,7 @@ body{
 
 /* ---------------- Cards ---------------- */
 .gallery-card {
-  height: 380px;
+  height:390 px;
   background: none;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -528,7 +528,14 @@ body{
   object-fit: cover;
   display: block;
 }
-
+.image-text{
+  color: #000;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 18px;
+  padding-left: 15px;
+  font-weight: 650;
+}
 /* ---------------- Responsive (Mobile) ---------------- */
 @media (max-width: 900px) {
 
@@ -946,7 +953,7 @@ body{
 footer{ background:#221d49; color:#fff; padding:28px 20px; }
 .footer-inner{ max-width:var(--max-width); margin:0 auto; display:flex; gap:20px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap }
 .footer-icons a{ margin-right:12px; color:#fff; text-decoration:none; font-size:20px }
-.footer-icons a:hover{ color:rgb(129, 129, 238) }
+.footer-icons a:hover{ color:rgb(144, 144, 152) }
 /* -------------------------
    Floating WhatsApp
    ------------------------- */
